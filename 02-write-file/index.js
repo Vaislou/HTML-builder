@@ -5,7 +5,7 @@ const url = path.join(__dirname, 'text.txt');
 
 const writeFile = fs.createWriteStream(url);
 
-console.log('Enter your message')
+console.log('Enter your message');
 process.stdin.pipe(writeFile);
 process.stdin.resume();
 
@@ -20,5 +20,5 @@ process.stdin.on('data', data => {
         process.stdout.write('Bye');
         process.exit();
     }
-})
+});
 
