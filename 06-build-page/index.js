@@ -10,6 +10,7 @@ fs.mkdir(`${url}/project-dist`, { recursive: true }, () => {
                 let stream = fs.createReadStream(`${url}/styles/${item}`, 'utf-8');
                 stream.on('data', (e) => {
                     fs.appendFile(`${url}/project-dist/style.css`, e, () => {});
+                    fs.appendFile(`${url}/project-dist/style.css`, '\n', () => {});
                 });
             }
         });
@@ -38,7 +39,7 @@ fs.readdir(`${url}/components`, (error, array) => {
                 fs.writeFile(`${url}/project-dist/index.html`, d, () => {});
             }
         });
-    }, 1000);
+    }, 4000);
 });
 
 const assetsUrl = path.join(__dirname, 'assets');
